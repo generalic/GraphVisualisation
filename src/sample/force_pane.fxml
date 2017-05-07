@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<TitledPane fx:id="forcePane" text="NBodyForce" xmlns="http://javafx.com/javafx/8"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ForcePaneController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="108.0" prefWidth="390.0">
+      <children>
+        <GridPane fx:id="forceGrid" alignment="CENTER" layoutX="10.0" layoutY="10.0"
+            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0">
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+            <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+            <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
+  </content>
+</TitledPane>

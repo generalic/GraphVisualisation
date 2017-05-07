@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"name":"A","group":0},
+		{"name":"B","group":0},
+		{"name":"C","group":0},
+		{"name":"D","group":0},
+		{"name":"E","group":0},
+		{"name":"F","group":0}
+	],
+	"links":[
+		{"source":1,"target":0,"value":1},
+		{"source":2,"target":0,"value":1},
+		{"source":4,"target":3,"value":1},
+		{"source":5,"target":2,"value":1},
+		{"source":5,"target":1,"value":1},
+		{"source":1,"target":4,"value":1},
+		{"source":3,"target":5,"value":1}
+	]
+}

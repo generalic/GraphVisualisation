@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+    prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainScreenController">
+  <center>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <children>
+        <SplitPane dividerPositions="0.6686143572621035" prefHeight="160.0" prefWidth="200.0"
+            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0">
+          <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+              <children>
+                <BorderPane fx:id="centerPane" layoutX="187.0" layoutY="119.0" prefHeight="200.0"
+                    prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+              </children>
+            </AnchorPane>
+            <TitledPane alignment="CENTER" animated="false" collapsible="false"
+                contentDisplay="CENTER" text="Graph Control" textAlignment="JUSTIFY">
+              <content>
+                <ScrollPane fitToWidth="true" prefViewportHeight="1100.0" prefViewportWidth="394.0"
+                    VBox.vgrow="ALWAYS">
+                  <content>
+                    <AnchorPane>
+                      <children>
+                        <Accordion fx:id="forceAccordion" AnchorPane.bottomAnchor="0.0"
+                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                            AnchorPane.topAnchor="0.0">
+                          <panes>
+                            <TitledPane fx:id="forcePane" text="Simulation Speed">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="108.0"
+                                    prefWidth="390.0">
+                                  <children>
+                                    <GridPane fx:id="forceGrid" alignment="CENTER" layoutX="10.0"
+                                        layoutY="10.0" AnchorPane.bottomAnchor="0.0"
+                                        AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                        AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+                                        <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+                                        <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+                                        <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+                                      </rowConstraints>
+                                      <children>
+                                        <GridPane fx:id="forceConstantControl"
+                                            GridPane.rowIndex="3">
+                                          <children>
+                                            <StackPane>
+                                              <children>
+                                                <Label fx:id="nameLabel" alignment="BASELINE_RIGHT"
+                                                    text="Simulation Speed" textAlignment="CENTER"/>
+                                              </children>
+                                            </StackPane>
+                                            <StackPane GridPane.columnIndex="2">
+                                              <children>
+                                                <Label fx:id="frameSliderValueLabel"
+                                                    alignment="CENTER" contentDisplay="CENTER"
+                                                    text="-1.0" GridPane.columnIndex="2"/>
+                                              </children>
+                                            </StackPane>
+                                            <StackPane GridPane.columnIndex="1">
+                                              <children>
+                                                <Slider fx:id="frameSlider" blockIncrement="1.0"
+                                                    max="200.0" min="1.0" value="1.0"
+                                                    GridPane.columnIndex="1"/>
+                                              </children>
+                                            </StackPane>
+                                          </children>
+                                          <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES"
+                                                maxWidth="144.99999237060547" minWidth="10.0"
+                                                prefWidth="144.99999237060547"/>
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0"
+                                                minWidth="10.0" prefWidth="172.00000762939453"/>
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0"
+                                                minWidth="10.0" prefWidth="53.0"/>
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                vgrow="SOMETIMES"/>
+                                          </rowConstraints>
+                                        </GridPane>
+                                      </children>
+                                    </GridPane>
+                                  </children>
+                                </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane fx:id="forcePane1" text="Initial Configuration">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="108.0"
+                                    prefWidth="390.0">
+                                  <children>
+                                    <GridPane fx:id="forceGrid1" alignment="CENTER" layoutX="10.0"
+                                        layoutY="10.0" AnchorPane.bottomAnchor="0.0"
+                                        AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                        AnchorPane.topAnchor="0.0">
+                                      <children>
+                                        <GridPane fx:id="forceConstantControl1"
+                                            GridPane.rowIndex="3">
+                                          <children>
+                                            <StackPane>
+                                              <children>
+                                                <Label fx:id="nameLabel1" alignment="BASELINE_RIGHT"
+                                                    text="Initial Configuration"
+                                                    textAlignment="CENTER"/>
+                                              </children>
+                                            </StackPane>
+                                            <StackPane GridPane.columnIndex="1">
+                                              <children>
+                                                <StackPane>
+                                                  <children>
+                                                    <ToggleButton fx:id="initConfigToggle"
+                                                        mnemonicParsing="false" selected="true"
+                                                        text="Random" HBox.hgrow="ALWAYS">
+                                                      <HBox.margin>
+                                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                            top="5.0"/>
+                                                      </HBox.margin>
+                                                      <toggleGroup>
+                                                        <ToggleGroup fx:id="config"/>
+                                                      </toggleGroup>
+                                                    </ToggleButton>
+                                                  </children>
+                                                </StackPane>
+                                              </children>
+                                            </StackPane>
+                                          </children>
+                                          <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES"
+                                                maxWidth="144.99999237060547" minWidth="10.0"
+                                                prefWidth="124.00000762939453"/>
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0"
+                                                minWidth="10.0" prefWidth="125.0"/>
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                vgrow="SOMETIMES"/>
+                                          </rowConstraints>
+                                        </GridPane>
+                                      </children>
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+                                        <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+                                        <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+                                        <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+                                        <RowConstraints valignment="CENTER" vgrow="NEVER"/>
+                                      </rowConstraints>
+                                    </GridPane>
+                                  </children>
+                                </AnchorPane>
+                              </content>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </ScrollPane>
+              </content>
+              <font>
+                <Font name="System Bold" size="12.0"/>
+              </font>
+            </TitledPane>
+          </items>
+        </SplitPane>
+      </children>
+    </AnchorPane>
+  </center>
+  <top>
+    <MenuBar BorderPane.alignment="CENTER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="openFileMenuItem" mnemonicParsing="false" onAction="#openFile"
+                text="Open">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP"
+                    shortcut="UP"/>
+              </accelerator>
+            </MenuItem>
+            <MenuItem fx:id="resetFileMenuItem" mnemonicParsing="false" onAction="#resetFile"
+                text="Reset">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP"
+                    shortcut="UP"/>
+              </accelerator>
+            </MenuItem>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showAboutWindow" text="About">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP"
+                    shortcut="UP"/>
+              </accelerator>
+            </MenuItem>
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>
