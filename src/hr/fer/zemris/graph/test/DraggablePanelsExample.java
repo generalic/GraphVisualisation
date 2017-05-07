@@ -33,7 +33,7 @@
 /*
  * Handling mouse events with event filters
  */
-package hr.fer.zemris.graph;
+package hr.fer.zemris.graph.test;
 
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;

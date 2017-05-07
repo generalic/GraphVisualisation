@@ -1,4 +1,4 @@
-package hr.fer.zemris.graph;
+package hr.fer.zemris.graph.test;
 
 import javafx.scene.layout.Pane;
 

@@ -1,7 +1,7 @@
 package hr.fer.zemris.util;
 
 import com.google.gson.Gson;
-import hr.fer.zemris.graph.Graph;
+import hr.fer.zemris.graph.test.Graph;
 import hr.fer.zemris.graph.edge.Edge;
 import hr.fer.zemris.graph.node.Node;
 import java.io.IOException;

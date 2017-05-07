@@ -1,4 +1,4 @@
-package hr.fer.zemris.graph;
+package hr.fer.zemris.graph.test;
 
 import hr.fer.zemris.graph.edge.Edge;
 import hr.fer.zemris.graph.node.Node;

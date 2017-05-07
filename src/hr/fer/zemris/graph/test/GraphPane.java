@@ -1,20 +1,15 @@
-package hr.fer.zemris.graph;
+package hr.fer.zemris.graph.test;
 
 import hr.fer.zemris.graph.layout.ForceDirectedLayout;
 import hr.fer.zemris.graph.node.Node;
-import hr.fer.zemris.util.GraphLoader;
-import java.io.IOException;
-import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.EventHandler;
 import javafx.geometry.Bounds;
 import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.input.MouseButton;
@@ -22,10 +17,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class ZoomAndPanExample extends Application {
+public class GraphPane {
 
     private ScrollPane scrollPane = new ScrollPane();
 
@@ -34,13 +28,10 @@ public class ZoomAndPanExample extends Application {
 
     private final Group group = new Group();
 
-    public static void main(String[] args) {
-        Application.launch(args);
-    }
+    private final AnchorPane root;
 
-    @Override
-    public void start(Stage primaryStage) throws IOException {
-
+    public GraphPane(ForceDirectedLayout fda) {
+        scrollPane.getStylesheets().addAll(getClass().getResource("boris.css").toExternalForm());
         scrollPane.setPannable(true);
         scrollPane.setHbarPolicy(ScrollBarPolicy.NEVER);
         scrollPane.setVbarPolicy(ScrollBarPolicy.NEVER);
@@ -49,12 +40,7 @@ public class ZoomAndPanExample extends Application {
         AnchorPane.setBottomAnchor(scrollPane, 0.0d);
         AnchorPane.setLeftAnchor(scrollPane, 0.0d);
 
-        AnchorPane root = new AnchorPane();
-
-        GraphLoader loader = new GraphLoader("miserables.json");
-        Graph graph = loader.getGraph();
-
-        ForceDirectedLayout fda = new ForceDirectedLayout(graph, 1200, 700);
+        root = new AnchorPane();
 
         group.getChildren().add(fda);
         // create canvas
@@ -78,21 +64,10 @@ public class ZoomAndPanExample extends Application {
         scrollPane.addEventFilter(ScrollEvent.ANY, sceneGestures.getOnScrollEventHandler());
 
         root.getChildren().add(scrollPane);
-        Scene scene = new Scene(root, 1200, 700);
-        scene.getStylesheets().addAll(getClass().getResource("boris.css").toExternalForm());
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    }
 
-        try {
-            Thread.sleep(2000);
-            Timeline gameLoop = new Timeline(new KeyFrame(Duration.millis(30), e -> {
-                fda.run(10);
-            }));
-            gameLoop.setCycleCount(Animation.INDEFINITE);
-            gameLoop.play();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public AnchorPane getRoot() {
+        return root;
     }
 
     private class PanAndZoomPane extends Pane {
@@ -214,7 +189,7 @@ public class ZoomAndPanExample extends Application {
 
         private EventHandler<MouseEvent> onMousePressedEventHandler =
             new EventHandler<MouseEvent>() {
-
+                @Override
                 public void handle(MouseEvent event) {
                     sceneDragContext.mouseAnchorX = event.getX();
                     sceneDragContext.mouseAnchorY = event.getY();
@@ -226,6 +201,7 @@ public class ZoomAndPanExample extends Application {
 
         private EventHandler<MouseEvent> onMouseDraggedEventHandler =
             new EventHandler<MouseEvent>() {
+                @Override
                 public void handle(MouseEvent event) {
                     if (event.getTarget() instanceof Node) {
                         return;
@@ -244,7 +220,6 @@ public class ZoomAndPanExample extends Application {
          * Mouse wheel handler: zoom to pivot point
          */
         private EventHandler<ScrollEvent> onScrollEventHandler = new EventHandler<ScrollEvent>() {
-
             @Override
             public void handle(ScrollEvent event) {
                 double delta = PanAndZoomPane.DEFAULT_DELTA;
@@ -277,7 +252,6 @@ public class ZoomAndPanExample extends Application {
          */
         private EventHandler<MouseEvent> onMouseClickedEventHandler =
             new EventHandler<MouseEvent>() {
-
                 @Override
                 public void handle(MouseEvent event) {
                     if (event.getButton().equals(MouseButton.PRIMARY)) {

@@ -1,4 +1,4 @@
-package hr.fer.zemris.graph;
+package hr.fer.zemris.graph.test;
 
 import hr.fer.zemris.graph.layout.FruchtermanReingoldLayout;
 import hr.fer.zemris.util.GraphLoader;

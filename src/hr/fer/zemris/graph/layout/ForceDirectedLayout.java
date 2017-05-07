@@ -1,6 +1,6 @@
 package hr.fer.zemris.graph.layout;
 
-import hr.fer.zemris.graph.Graph;
+import hr.fer.zemris.graph.test.Graph;
 import hr.fer.zemris.graph.force.ForceSimulator;
 import hr.fer.zemris.graph.force.items.DragForce;
 import hr.fer.zemris.graph.force.items.GravitationalForce;

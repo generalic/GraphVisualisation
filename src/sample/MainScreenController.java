@@ -1,7 +1,7 @@
 package sample;
 
-import hr.fer.zemris.graph.Graph;
-import hr.fer.zemris.graph.GraphPane;
+import hr.fer.zemris.graph.test.Graph;
+import hr.fer.zemris.graph.test.GraphPane;
 import hr.fer.zemris.graph.force.ForceSimulator;
 import hr.fer.zemris.graph.force.IForce;
 import hr.fer.zemris.graph.layout.ForceDirectedLayout;
