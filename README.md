@@ -1,9 +1,8 @@
 # GraphVisualisation
-**@FER - Bachelor Thessis**
+**@FER - Bachelor Thessis: Automatic Graph Visualization**
 
 ----------
 
-**Automatic Graph Visualization** 
 Abstract
 
 In this bachelor’s thesis force-directed algorithm is described for automatic graph visualisation. We described Fruchterman-Reingold algorithm and its usage of simula- ted annealing to minimize the energy of the system and to achive better vertex layout. Based on results for various graphs, considering number of vertices, we discuss the problem of force calculation among vertices which is executed in quadratic time com- plexity.
